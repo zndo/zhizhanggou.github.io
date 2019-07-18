@@ -347,11 +347,37 @@
 <p>​        3、《从贝叶斯估计到卡尔曼滤波》sh001 <a href="https://zhuanlan.zhihu.com/p/42387880" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/42387880</a></p>
 <p>​        4、<a href="https://www.youtube.com/watch?v=5Pu558YtjYM" target="_blank" rel="noopener">https://www.youtube.com/watch?v=5Pu558YtjYM</a></p>
 <p>​        看了几篇花式卡尔曼的论文，结合最优估计课上老师说的内容。我发现还是得先把贝叶斯滤波给搞明白了。论文的推导都是贝叶斯滤波框架下进行的。</p>
-<h5 id="贝叶斯滤波的推导："><a href="#贝叶斯滤波的推导：" class="headerlink" title="贝叶斯滤波的推导："></a>贝叶斯滤波的推导：</h5><p>$bel(\pmb{x}_t)$表示状态变量$\pmb{x}_t$的置信度，其为下式后验概率的缩写。<br>$$<br>bel(\pmb{x}_t)=p(\pmb{x}<em>t|\pmb{z}</em>{1:t},\pmb{u}_{1:t}) \tag{1}<br>$$<br>这个后验是时刻$t$下状态$\pmb{x}<em>t$的概率分布，以所有过去测量$\pmb{z}</em>{1:t}$和所有过去控制$\pmb{u}_{1:t}$为条件。</p>
-<p>根据贝叶斯公式即<br>$$<br>p(x|y)=\frac{p(y|x)p(x)}{p(y)}<br>$$<br>可将(1)式写为<br>$$<br>p(\pmb{x}<em>t|\pmb{z}</em>{1:t},\pmb{u}_{1:t})=\eta p(\pmb{z}_t|\pmb{x}<em>t,\pmb{z}</em>{1:t-1},\pmb{u}_{1:t})p(\pmb{x}<em>t|\pmb{z}</em>{1:t-1},\pmb{u}_{1:t})\tag{2}<br>$$<br>其中<br>$$<br>\eta= \frac{1}{p(\pmb{z}<em>t|\pmb{z}</em>{1:t-1},\pmb{u}_{1:t})}<br>$$<br>观测量不会因为状态而发生改变，是个已知的值，所以$\eta$为归一化常数。</p>
-<p>根据马尔可夫假设（Markov assumption）如果知道当天状态$\pmb{x}_t$,马尔可夫假设设定过去与未来的数据都是独立的。即式(2)可以写为<br>$$<br>bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}_t)p(\pmb{x}<em>t|\pmb{z}</em>{1:t-1},\pmb{u}<em>{1:t})\tag{3}<br>$$<br>根据全概率公式(连续)即<br>$$<br>f(x)=\int</em>{-\infty}^{+\infty}f(x|y)f(y)dy<br>$$<br>可将式(3)写为<br>$$<br>bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}<em>t)\int</em>{x_{t-1}}p(\pmb{x}<em>t|\pmb{x}</em>{t-1},\pmb{z}<em>{1:t-1},\pmb{u}</em>{1:t})p(\pmb{x}<em>{t-1}|\pmb{z}</em>{1:t-1},\pmb{u}<em>{1:t})d\pmb{x}</em>{t-1}\tag{4}<br>$$<br>其中积分号下的$x_{t-1}$表示$x_{t-1}$可能出现的所有情况。再次根据马尔可夫假设，如果知道$\pmb{x}_{t-1}$，，过去的测量与控制不会传递任何关于状态$\pmb{x}_t$的信息，因此有<br>$$<br>bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}<em>t)\int</em>{x_{t-1}}p(\pmb{x}<em>t|\pmb{x}</em>{t-1},\pmb{u}<em>{t})p(\pmb{x}</em>{t-1}|\pmb{z}<em>{1:t-1},\pmb{u}</em>{1:t})d\pmb{x}_{t-1}\tag{5}<br>$$<br>由于t时刻的控制量不会对t-1时刻的状态产生影响，所以式(4)可写为<br>$$<br>\begin{equation}<br>\begin{aligned}<br>bel(\pmb{x}_t)&amp;=\eta p(\pmb{z}_t|\pmb{x}<em>t)\int</em>{x_{t-1}}p(\pmb{x}<em>t|\pmb{x}</em>{t-1},\pmb{u}<em>{t})p(\pmb{x}</em>{t-1}|\pmb{z}<em>{1:t-1},\pmb{u}</em>{1:t-1})d\pmb{x}_{t-1}<br>\&amp;=\eta p(\pmb{z}_t|\pmb{x}<em>t)\int</em>{x_{t-1}}p(\pmb{x}<em>t|\pmb{x}</em>{t-1},\pmb{u}<em>{t})bel(\pmb{x}</em>{t-1})d\pmb{x}<em>{t-1}<br>\end{aligned}\tag{6}<br>\end{equation}<br>$$<br>式(6)就表示出从状态$x</em>{t-1}$的置信度到$x_{t}$置信度的更新过程。并可以将贝叶斯滤波分为两个过程</p>
-<p>1、预测过程(prediction step)<br>$$<br>\overline{bel}(\pmb{x}<em>t)=\int</em>{x_{t-1}}p(\pmb{x}<em>t|\pmb{x}</em>{t-1},\pmb{u}<em>{t})bel(\pmb{x}</em>{t-1})d\pmb{x}_{t-1}<br>$$<br>2、更新过程(correction step)<br>$$<br>bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}_t)\overline{bel}(\pmb{x}_t)<br>$$</p>
-
+<h5 id="贝叶斯滤波的推导："><a href="#贝叶斯滤波的推导：" class="headerlink" title="贝叶斯滤波的推导："></a>贝叶斯滤波的推导：</h5><p>$bel(\pmb{x}_t)$表示状态变量$\pmb{x}_t$的置信度，其为下式后验概率的缩写。</p>
+<script type="math/tex; mode=display">
+bel(\pmb{x}_t)=p(\pmb{x}_t|\pmb{z}_{1:t},\pmb{u}_{1:t}) \tag{1}</script><p>这个后验是时刻$t$下状态$\pmb{x}<em>t$的概率分布，以所有过去测量$\pmb{z}</em>{1:t}$和所有过去控制$\pmb{u}_{1:t}$为条件。</p>
+<p>根据贝叶斯公式即</p>
+<script type="math/tex; mode=display">
+p(x|y)=\frac{p(y|x)p(x)}{p(y)}</script><p>可将(1)式写为</p>
+<script type="math/tex; mode=display">
+p(\pmb{x}_t|\pmb{z}_{1:t},\pmb{u}_{1:t})=\eta p(\pmb{z}_t|\pmb{x}_t,\pmb{z}_{1:t-1},\pmb{u}_{1:t})p(\pmb{x}_t|\pmb{z}_{1:t-1},\pmb{u}_{1:t})\tag{2}</script><p>其中</p>
+<script type="math/tex; mode=display">
+\eta= \frac{1}{p(\pmb{z}_t|\pmb{z}_{1:t-1},\pmb{u}_{1:t})}</script><p>观测量不会因为状态而发生改变，是个已知的值，所以$\eta$为归一化常数。</p>
+<p>根据马尔可夫假设（Markov assumption）如果知道当天状态$\pmb{x}_t$,马尔可夫假设设定过去与未来的数据都是独立的。即式(2)可以写为</p>
+<script type="math/tex; mode=display">
+bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}_t)p(\pmb{x}_t|\pmb{z}_{1:t-1},\pmb{u}_{1:t})\tag{3}</script><p>根据全概率公式(连续)即</p>
+<script type="math/tex; mode=display">
+f(x)=\int_{-\infty}^{+\infty}f(x|y)f(y)dy</script><p>可将式(3)写为</p>
+<script type="math/tex; mode=display">
+bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}_t)\int_{x_{t-1}}p(\pmb{x}_t|\pmb{x}_{t-1},\pmb{z}_{1:t-1},\pmb{u}_{1:t})p(\pmb{x}_{t-1}|\pmb{z}_{1:t-1},\pmb{u}_{1:t})d\pmb{x}_{t-1}\tag{4}</script><p>其中积分号下的$x<em>{t-1}$表示$x</em>{t-1}$可能出现的所有情况。再次根据马尔可夫假设，如果知道$\pmb{x}_{t-1}$，，过去的测量与控制不会传递任何关于状态$\pmb{x}_t$的信息，因此有</p>
+<script type="math/tex; mode=display">
+bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}_t)\int_{x_{t-1}}p(\pmb{x}_t|\pmb{x}_{t-1},\pmb{u}_{t})p(\pmb{x}_{t-1}|\pmb{z}_{1:t-1},\pmb{u}_{1:t})d\pmb{x}_{t-1}\tag{5}</script><p>由于t时刻的控制量不会对t-1时刻的状态产生影响，所以式(4)可写为</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+bel(\pmb{x}_t)&=\eta p(\pmb{z}_t|\pmb{x}_t)\int_{x_{t-1}}p(\pmb{x}_t|\pmb{x}_{t-1},\pmb{u}_{t})p(\pmb{x}_{t-1}|\pmb{z}_{1:t-1},\pmb{u}_{1:t-1})d\pmb{x}_{t-1}
+\\&=\eta p(\pmb{z}_t|\pmb{x}_t)\int_{x_{t-1}}p(\pmb{x}_t|\pmb{x}_{t-1},\pmb{u}_{t})bel(\pmb{x}_{t-1})d\pmb{x}_{t-1}
+\end{aligned}\tag{6}
+\end{equation}</script><p>式(6)就表示出从状态$x<em>{t-1}$的置信度到$x</em>{t}$置信度的更新过程。并可以将贝叶斯滤波分为两个过程</p>
+<p>1、预测过程(prediction step)</p>
+<script type="math/tex; mode=display">
+\overline{bel}(\pmb{x}_t)=\int_{x_{t-1}}p(\pmb{x}_t|\pmb{x}_{t-1},\pmb{u}_{t})bel(\pmb{x}_{t-1})d\pmb{x}_{t-1}</script><p>2、更新过程(correction step)</p>
+<script type="math/tex; mode=display">
+bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}_t)\overline{bel}(\pmb{x}_t)</script>
           
         
       
@@ -1736,6 +1762,28 @@ int main()
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
