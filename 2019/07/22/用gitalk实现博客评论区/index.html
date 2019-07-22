@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="字符串,">
+  <meta name="keywords" content="博客搭建,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="C++提取字符串中的数字(strtok_s的使用)​        之前遇到需要将表示时间的字符串，例如“1995-10-08”，将其中的年月日提取出来用int型存储。C++(11)下没有直接转换标准时间格式的函数。直接用if语句提取来进行判断并截取十分的麻烦费时。 ​        可以用strtok_s(linux下为strtok_r)函数进行处理,其形式为: 1char *strtok_s(">
-<meta name="keywords" content="字符串">
+<meta name="description" content="​        首先是不推荐使用gitment，因为作者退坑了，虽然作者开源了源码，但需要自己去搭建服务器，很麻烦（半天都花在这个上面了）。 ​        使用gitalk的搭建方式参考这个教程https://asdfv1929.github.io/2018/01/20/gitalk/  下面是我遇到的一些坑。 (1)、github上设置的时候选的是OAuth Apps而不是GitHub A">
+<meta name="keywords" content="博客搭建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++提取字符串中的数字(strtok_s的使用)">
-<meta property="og:url" content="http://yoursite.com/2019/07/02/C-提取字符串中的数字-strtok-s的使用/index.html">
+<meta property="og:title" content="用gitalk实现博客评论区遇到的坑">
+<meta property="og:url" content="http://yoursite.com/2019/07/22/用gitalk实现博客评论区/index.html">
 <meta property="og:site_name" content="dog house">
-<meta property="og:description" content="C++提取字符串中的数字(strtok_s的使用)​        之前遇到需要将表示时间的字符串，例如“1995-10-08”，将其中的年月日提取出来用int型存储。C++(11)下没有直接转换标准时间格式的函数。直接用if语句提取来进行判断并截取十分的麻烦费时。 ​        可以用strtok_s(linux下为strtok_r)函数进行处理,其形式为: 1char *strtok_s(">
+<meta property="og:description" content="​        首先是不推荐使用gitment，因为作者退坑了，虽然作者开源了源码，但需要自己去搭建服务器，很麻烦（半天都花在这个上面了）。 ​        使用gitalk的搭建方式参考这个教程https://asdfv1929.github.io/2018/01/20/gitalk/  下面是我遇到的一些坑。 (1)、github上设置的时候选的是OAuth Apps而不是GitHub A">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-02T13:57:26.273Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/22/用gitalk实现博客评论区/blog/source/_posts/用gitalk实现博客评论区/1563801149784.png">
+<meta property="og:updated_time" content="2019-07-22T13:25:53.443Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++提取字符串中的数字(strtok_s的使用)">
-<meta name="twitter:description" content="C++提取字符串中的数字(strtok_s的使用)​        之前遇到需要将表示时间的字符串，例如“1995-10-08”，将其中的年月日提取出来用int型存储。C++(11)下没有直接转换标准时间格式的函数。直接用if语句提取来进行判断并截取十分的麻烦费时。 ​        可以用strtok_s(linux下为strtok_r)函数进行处理,其形式为: 1char *strtok_s(">
+<meta name="twitter:title" content="用gitalk实现博客评论区遇到的坑">
+<meta name="twitter:description" content="​        首先是不推荐使用gitment，因为作者退坑了，虽然作者开源了源码，但需要自己去搭建服务器，很麻烦（半天都花在这个上面了）。 ​        使用gitalk的搭建方式参考这个教程https://asdfv1929.github.io/2018/01/20/gitalk/  下面是我遇到的一些坑。 (1)、github上设置的时候选的是OAuth Apps而不是GitHub A">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/22/用gitalk实现博客评论区/blog/source/_posts/用gitalk实现博客评论区/1563801149784.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/02/C-提取字符串中的数字-strtok-s的使用/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/22/用gitalk实现博客评论区/">
 
 
 
 
 
-  <title>C++提取字符串中的数字(strtok_s的使用) | dog house</title>
+  <title>用gitalk实现博客评论区遇到的坑 | dog house</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/02/C-提取字符串中的数字-strtok-s的使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/22/用gitalk实现博客评论区/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zzg">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++提取字符串中的数字(strtok_s的使用)</h1>
+          <h1 class="post-title" itemprop="name headline">用gitalk实现博客评论区遇到的坑</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-02T21:50:15+08:00">
-                2019-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-22T21:03:14+08:00">
+                2019-07-22
               </time>
             
 
@@ -305,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-日常/" itemprop="url" rel="index">
-                    <span itemprop="name">C++日常</span>
+                  <a href="/categories/博客搭建相关/" itemprop="url" rel="index">
+                    <span itemprop="name">博客搭建相关</span>
                   </a>
                 </span>
 
@@ -347,16 +349,16 @@
       
 
       
-        <h1 id="C-提取字符串中的数字-strtok-s的使用"><a href="#C-提取字符串中的数字-strtok-s的使用" class="headerlink" title="C++提取字符串中的数字(strtok_s的使用)"></a>C++提取字符串中的数字(strtok_s的使用)</h1><p>​        之前遇到需要将表示时间的字符串，例如“1995-10-08”，将其中的年月日提取出来用int型存储。C++(11)下没有直接转换标准时间格式的函数。直接用if语句提取来进行判断并截取十分的麻烦费时。</p>
-<p>​        可以用<strong>strtok_s</strong>(linux下为<strong>strtok_r</strong>)函数进行处理,其形式为:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strtok_s</span><span class="params">( <span class="keyword">char</span> *strToken, <span class="keyword">const</span> <span class="keyword">char</span> *strDelimit, <span class="keyword">char</span> **buf)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>​        其返回值是被切割的第一个子字符串。strToken为被切割的字符串，strDelimit包含分隔字符的字符串，buf为切割后剩余字符串。<strong>字符串切割完后会将原字符串中的分隔字符替换为\0</strong>。</p>
-<p>使用方法如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> year;</span><br><span class="line">	<span class="keyword">int</span> month;</span><br><span class="line">	<span class="keyword">int</span> day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DateStrToInt</span><span class="params">(<span class="built_in">string</span> date_S, Date &amp;date_I)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> temp;</span><br><span class="line">	<span class="keyword">char</span>* buf;</span><br><span class="line">	temp = strtok_s((<span class="keyword">char</span>*)date_S.data(), <span class="string">"-"</span>, &amp;buf);</span><br><span class="line">	date_I.year = stoi(temp);</span><br><span class="line">	temp = strtok_s(<span class="literal">NULL</span>, <span class="string">"-"</span>, &amp;buf);</span><br><span class="line">	date_I.month = stoi(temp);</span><br><span class="line">	date_I.day = stoi(buf);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>需注意的是strDelimit为字符串的话并不是以整个字符串作为分隔符，而是其中每个字符单独作为分隔符。</p>
-<p>针对在线笔试的话直接用函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scanf(&quot;%d-%d-%d&quot;,&amp;year,&amp;month,&amp;day);</span><br></pre></td></tr></table></figure>
-<p>就完事了，不用麻烦的去操作字符串，太浪费时间。</p>
+        <p>​        首先是不推荐使用gitment，因为作者退坑了，虽然作者开源了源码，但需要自己去搭建服务器，很麻烦（半天都花在这个上面了）。</p>
+<p>​        使用gitalk的搭建方式参考这个教程<a href="https://asdfv1929.github.io/2018/01/20/gitalk/" target="_blank" rel="noopener">https://asdfv1929.github.io/2018/01/20/gitalk/</a> </p>
+<p>下面是我遇到的一些坑。</p>
+<h5 id="1-、github上设置的时候选的是OAuth-Apps而不是GitHub-Apps！！"><a href="#1-、github上设置的时候选的是OAuth-Apps而不是GitHub-Apps！！" class="headerlink" title="(1)、github上设置的时候选的是OAuth Apps而不是GitHub Apps！！"></a>(1)、github上设置的时候选的是OAuth Apps而不是GitHub Apps！！</h5><p><img src="/2019/07/22/用gitalk实现博客评论区/blog\source\_posts\用gitalk实现博客评论区\1563801149784.png" alt="1563801149784"></p>
+<h5 id="2-、会出现Error-Validation-Failed的问题，解决方法如下。"><a href="#2-、会出现Error-Validation-Failed的问题，解决方法如下。" class="headerlink" title="(2)、会出现Error Validation Failed的问题，解决方法如下。"></a>(2)、会出现Error Validation Failed的问题，解决方法如下。</h5><p>1、去<a href="https://github.com/blueimp/JavaScript-MD5上下载MD5的包。" target="_blank" rel="noopener">https://github.com/blueimp/JavaScript-MD5上下载MD5的包。</a></p>
+<p>2、将其中js文件夹下md5.min.js复制到blog\themes\next\source\js\src中。</p>
+<p>3、将blog\themes\next\layout_third-party\comments下的gitalk.swig修改成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.comments &amp;&amp; theme.gitalk.enable %&#125;</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/gitalk/dist/gitalk.css&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script src=&quot;https://unpkg.com/gitalk/dist/gitalk.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;/js/src/md5.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">   &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        var gitalk = new Gitalk(&#123;</span><br><span class="line">          clientID: &apos;&#123;&#123; theme.gitalk.ClientID &#125;&#125;&apos;,</span><br><span class="line">          clientSecret: &apos;&#123;&#123; theme.gitalk.ClientSecret &#125;&#125;&apos;,</span><br><span class="line">          repo: &apos;&#123;&#123; theme.gitalk.repo &#125;&#125;&apos;,</span><br><span class="line">          owner: &apos;&#123;&#123; theme.gitalk.githubID &#125;&#125;&apos;,</span><br><span class="line">          admin: [&apos;&#123;&#123; theme.gitalk.adminUser &#125;&#125;&apos;],</span><br><span class="line">          id: md5(location.pathname),</span><br><span class="line">          distractionFreeMode: &apos;&#123;&#123; theme.gitalk.distractionFreeMode &#125;&#125;&apos;</span><br><span class="line">        &#125;)</span><br><span class="line">        gitalk.render(&apos;gitalk-container&apos;)           </span><br><span class="line">       &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>就是加了一句<strong><script src="/js/src/md5.min.js"></script></strong>，和把id: md5(location.pathname),修改为了<strong>id: md5(location.pathname),</strong> </p>
+<p>不知道出现啥问题的时候可以打开博客，并按F12开启查看源码。可以查看里面的报错来定位问题。</p>
 
       
     </div>
@@ -374,7 +376,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/字符串/" rel="tag"># 字符串</a>
+            <a href="/tags/博客搭建/" rel="tag"># 博客搭建</a>
           
         </div>
       
@@ -387,8 +389,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/30/栈的顺序存储结构/" rel="next" title="栈的顺序存储结构">
-                <i class="fa fa-chevron-left"></i> 栈的顺序存储结构
+              <a href="/2019/07/19/c-创建线程的四种方式/" rel="next" title="C++创建线程的四种方式">
+                <i class="fa fa-chevron-left"></i> C++创建线程的四种方式
               </a>
             
           </div>
@@ -396,10 +398,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/03/KMP模式匹配算法/" rel="prev" title="KMP模式匹配算法">
-                KMP模式匹配算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-提取字符串中的数字-strtok-s的使用"><span class="nav-number">1.</span> <span class="nav-text">C++提取字符串中的数字(strtok_s的使用)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-、github上设置的时候选的是OAuth-Apps而不是GitHub-Apps！！"><span class="nav-number">1.</span> <span class="nav-text">(1)、github上设置的时候选的是OAuth Apps而不是GitHub Apps！！</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-、会出现Error-Validation-Failed的问题，解决方法如下。"><span class="nav-number">2.</span> <span class="nav-text">(2)、会出现Error Validation Failed的问题，解决方法如下。</span></a></li></ol></div>
             
 
           </div>
