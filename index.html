@@ -345,7 +345,7 @@
             <p>​        首先是不推荐使用gitment，因为作者退坑了，虽然作者开源了源码，但需要自己去搭建服务器，很麻烦（半天都花在这个上面了）。</p>
 <p>​        使用gitalk的搭建方式参考这个教程<a href="https://asdfv1929.github.io/2018/01/20/gitalk/" target="_blank" rel="noopener">https://asdfv1929.github.io/2018/01/20/gitalk/</a> </p>
 <p>下面是我遇到的一些坑。</p>
-<h5 id="1-、github上设置的时候选的是OAuth-Apps而不是GitHub-Apps！！"><a href="#1-、github上设置的时候选的是OAuth-Apps而不是GitHub-Apps！！" class="headerlink" title="(1)、github上设置的时候选的是OAuth Apps而不是GitHub Apps！！"></a>(1)、github上设置的时候选的是OAuth Apps而不是GitHub Apps！！</h5><p><img src="/2019/07/22/用gitalk实现博客评论区/1563801149784.png" alt="1563801149784"></p>
+<h5 id="1-、github上设置的时候选的是OAuth-Apps而不是GitHub-Apps！！"><a href="#1-、github上设置的时候选的是OAuth-Apps而不是GitHub-Apps！！" class="headerlink" title="(1)、github上设置的时候选的是OAuth Apps而不是GitHub Apps！！"></a>(1)、github上设置的时候选的是OAuth Apps而不是GitHub Apps！！</h5><p><img src="/2019/07/22/用gitalk实现博客评论区/1563801149784.PNG" alt="1563801149784"></p>
 <h5 id="2-、会出现Error-Validation-Failed的问题，解决方法如下。"><a href="#2-、会出现Error-Validation-Failed的问题，解决方法如下。" class="headerlink" title="(2)、会出现Error Validation Failed的问题，解决方法如下。"></a>(2)、会出现Error Validation Failed的问题，解决方法如下。</h5><p>1、去<a href="https://github.com/blueimp/JavaScript-MD5上下载MD5的包。" target="_blank" rel="noopener">https://github.com/blueimp/JavaScript-MD5上下载MD5的包。</a></p>
 <p>2、将其中js文件夹下md5.min.js复制到blog\themes\next\source\js\src中。</p>
 <p>3、将blog\themes\next\layout_third-party\comments下的gitalk.swig修改成</p>
