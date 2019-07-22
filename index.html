@@ -249,6 +249,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/c-创建线程的四种方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dog house">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/19/c-创建线程的四种方式/" itemprop="url">c++创建线程的四种方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T19:18:16+08:00">
+                2019-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-日常/" itemprop="url" rel="index">
+                    <span itemprop="name">C++日常</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>参考：《C++高级编程》Marc Gregoire</p>
+<h5 id="一、通过函数指针创建线程"><a href="#一、通过函数指针创建线程" class="headerlink" title="一、通过函数指针创建线程"></a>一、通过函数指针创建线程</h5><p>​        定义函数counter()，传入两个参数：第一个表示线程的ID，第二个表示这个函数要循环的次数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void counter(int id, int numIterations)</span><br><span class="line">&#123;</span><br><span class="line">	for (int i=0;i&lt;numIterations;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;Counter&quot; &lt;&lt; id &lt;&lt; &quot;has value&quot;;</span><br><span class="line">		cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过std:thread 启动多个线程。例如创建线程1，以参数1和6作为creater的参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::thread t1(counter, 1, 6);</span><br></pre></td></tr></table></figure>
+<p>thread类的构造函数是个可变参数模板，可以接受任意数目的参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &quot;thread&quot;</span><br><span class="line">using namespace std;</span><br><span class="line">void counter(int id, int numIterations)</span><br><span class="line">&#123;</span><br><span class="line">	for (int i=0;i&lt;numIterations;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;Counter&quot; &lt;&lt; id &lt;&lt; &quot;has value&quot;;</span><br><span class="line">		cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	thread t1(counter, 1, 6);</span><br><span class="line">	thread t2(counter, 2, 4);</span><br><span class="line">	t1.join();</span><br><span class="line">	t2.join();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​        其中，<strong>join函数</strong>的用处是阻塞主调线程(即main函数的主线程)，等待被调线程(t1与t2)终止，再由主调线程回收被调线程的资源，继续运行。在本例中的用途就是防止被调线程未执行完，而main线程先结束，导致程序停止执行。</p>
+<h5 id="二、通过函数对象创建线程"><a href="#二、通过函数对象创建线程" class="headerlink" title="二、通过函数对象创建线程"></a>二、通过函数对象创建线程</h5><p>​        使用函数对象，可向函数对象类添加成员变量，并可以采用任何方式初始化和使用这些变量。定义一个Counter类，其中有两个成员变量：一个表示ID，一个表示循环次数。成员变量通过类构造函数初始化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Counter</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Counter(int id, int numIterations) :mId(id), mNumIterations(numIterations)</span><br><span class="line">	&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	void operator()() const</span><br><span class="line">	&#123;</span><br><span class="line">		for (int i = 0; i &lt; mNumIterations; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; &quot;Counter&quot; &lt;&lt; mId &lt;&lt; &quot;has value&quot;;</span><br><span class="line">			cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int mId;</span><br><span class="line">	int mNumIterations;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre><code>int main()
+{
+    //Using uniform initialization syntax C++11后推出的新特性 统一初始化语法 初始化用{ }就完事了
+    thread t1{ Counter{1,6} };
+    //Using named varibale 实例化类
+    Counter c(2, 12);
+    thread t2(c);
+    //Using temporary 
+    thread t3(Counter(3, 10));
+
+    //等待线程结束
+    t1.join();
+    t2.join();
+    t3.join();
+}
+</code></pre><p>​        使用t3那种初始化方法的时候需要注意，如果函数对象构造函数不含任何参数，则上面写的方法不能正常工作。例如下面这种写法就会报错。编译器会将thread t3(Counter());视作t1函数的声明，这个函数返回thread对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Counter</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Counter()</span><br><span class="line">	&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	void operator()() const</span><br><span class="line">	&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	//Using temporary </span><br><span class="line">	thread t3(Counter());</span><br><span class="line">    //等待线程结束</span><br><span class="line">    t3.join();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​        尽量使用统一初始化语法，即第一种方法。如果编译器不支持，则必须添加额外的圆括号来防止编译器将这条语句解释为函数声明。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">thread t3((Counter()));</span><br></pre></td></tr></table></figure>
+<h5 id="三、通过lambda表达式创建线程"><a href="#三、通过lambda表达式创建线程" class="headerlink" title="三、通过lambda表达式创建线程"></a>三、通过lambda表达式创建线程</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &quot;thread&quot;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int id&#123; 1 &#125;;</span><br><span class="line">	int numIterations&#123; 6 &#125;;</span><br><span class="line">	thread t1(</span><br><span class="line">		[id, numIterations] &#123;</span><br><span class="line">		for (int i = 0; i &lt; numIterations; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; &quot;Counter&quot; &lt;&lt; id &lt;&lt; &quot;has value&quot;;</span><br><span class="line">			cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	);</span><br><span class="line">	t1.join();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="四、通过成员函数创建线程"><a href="#四、通过成员函数创建线程" class="headerlink" title="四、通过成员函数创建线程"></a>四、通过成员函数创建线程</h5><p>定义一个带有process()方法的基类Request。main()函数创建Request类的一个实例，并启动线程，这个线程执行Request实例req的process()成员函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &quot;thread&quot;</span><br><span class="line">using namespace std;</span><br><span class="line">class Request</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Request(int id):mId(id)&#123;&#125;</span><br><span class="line">	void process()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;Processing request&quot; &lt;&lt; mId &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int mId;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Request req&#123; 100 &#125;;</span><br><span class="line">	thread t&#123; &amp;Request::process,&amp;req &#125;;</span><br><span class="line">	t.join();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/14/贝叶斯滤波/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1484,7 +1657,7 @@ int main()
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1506,7 +1679,7 @@ int main()
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
