@@ -734,7 +734,7 @@
           repo: 'Blog_Comment',
           owner: 'zhizhanggou',
           admin: ['zhizhanggou'],
-          id: md5(location.pathname),
+          id: location.pathname,
           distractionFreeMode: 'true'
         })
         gitalk.render('gitalk-container')           
