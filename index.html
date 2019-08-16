@@ -249,6 +249,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhizhanggou.github.io/2019/08/16/快乐耳放/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzg">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dog house">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/16/快乐耳放/" itemprop="url">快乐耳放</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-16T19:29:27+08:00">
+                2019-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/瞎玩/" itemprop="url" rel="index">
+                    <span itemprop="name">瞎玩</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>​        趁着暑假(就tm一周)把本科没来得及做的电子管耳放做一做。采用胆前级石后级的结构。前级使用6J1管子(相对便宜，15一个)。后级使用NE5532搭个跟随器。</p>
+<p>​        由于6J1的阳极需要90V~120V的直流偏压。开始的方案是使用12V电源DCDC升压来做，参考<a href="https://zhuanlan.zhihu.com/p/37213569" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/37213569</a> 。加上6.3V和5V的输出打样回来测试。170V的电压输出很容易就出来了，当在接示波器一看，纹波着实感人。在输出加上LC低通滤波后依然没法看，波动在$\pm4V$频率在20多KHz，这肯定是没法用的。</p>
+<p><img src="/2019/08/16/快乐耳放/blog\source\_posts\快乐耳放\电源模块.png" alt="电源模块"></p>
+<p>​        输入的DC接口忘买了，先拿两根铁丝替一替。忘了拍波形的照片，反正是用不了了，而且这种方式带载的能力十分有限，最多十几毫安。带带辉光管还是没什么问题的，但是耳放肯定不能用这个。</p>
+<p>​        还是老老实实220V来整流来的方便。去西安的电子大楼逛了逛，东西真的非常的全。找了个卖小变压器的阿姨，30块钱现场绕了个双9V的变压器，作为低压电源和后级的负电源。</p>
+<p>​        电路如下：</p>
+<p><img src="/2019/08/16/快乐耳放/耳放电路.png" alt="耳放电路"></p>
+<p>​        在220V整流的地方原来打算加个RC低通滤波，结果那个R6那个电阻没有用功率大点的电阻，而是直接用了0603的贴片电阻，结果上电那个电阻就炸了。没办法只能暂时去掉这个电阻，直接用锡连上。炸的原因可能是电容容值较大瞬间功率较大，电阻刚不住了，也有可能是电阻两端压差较大，又挨得很近，打电弧了。</p>
+<p>​        除了这个地方有点问题，其他地方都比较顺利。完成的图片如下：</p>
+<p><img src="/2019/08/16/快乐耳放/电子管耳放.JPG" alt="电子管耳放"></p>
+<p>​        用了个耳机试了试，底噪稍微有点大。通过调高输入的音量，减小胆管的放大倍数可以有效缓解。经调整后效果不错。</p>
+<p>​        也算把本科留下的瞎玩目标完成了一个。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhizhanggou.github.io/2019/08/03/string-npos的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1642,157 +1795,6 @@ bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}_t)\overline{bel}(\pmb{x}_t)</script>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhizhanggou.github.io/2019/07/02/C-提取字符串中的数字-strtok-s的使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzg">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="dog house">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/02/C-提取字符串中的数字-strtok-s的使用/" itemprop="url">C++提取字符串中的数字(strtok_s的使用)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-02T21:50:15+08:00">
-                2019-07-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-日常/" itemprop="url" rel="index">
-                    <span itemprop="name">C++日常</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="C-提取字符串中的数字-strtok-s的使用"><a href="#C-提取字符串中的数字-strtok-s的使用" class="headerlink" title="C++提取字符串中的数字(strtok_s的使用)"></a>C++提取字符串中的数字(strtok_s的使用)</h1><p>​        之前遇到需要将表示时间的字符串，例如“1995-10-08”，将其中的年月日提取出来用int型存储。C++(11)下没有直接转换标准时间格式的函数。直接用if语句提取来进行判断并截取十分的麻烦费时。</p>
-<p>​        可以用<strong>strtok_s</strong>(linux下为<strong>strtok_r</strong>)函数进行处理,其形式为:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strtok_s</span><span class="params">( <span class="keyword">char</span> *strToken, <span class="keyword">const</span> <span class="keyword">char</span> *strDelimit, <span class="keyword">char</span> **buf)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>​        其返回值是被切割的第一个子字符串。strToken为被切割的字符串，strDelimit包含分隔字符的字符串，buf为切割后剩余字符串。<strong>字符串切割完后会将原字符串中的分隔字符替换为\0</strong>。</p>
-<p>使用方法如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> year;</span><br><span class="line">	<span class="keyword">int</span> month;</span><br><span class="line">	<span class="keyword">int</span> day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DateStrToInt</span><span class="params">(<span class="built_in">string</span> date_S, Date &amp;date_I)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> temp;</span><br><span class="line">	<span class="keyword">char</span>* buf;</span><br><span class="line">	temp = strtok_s((<span class="keyword">char</span>*)date_S.data(), <span class="string">"-"</span>, &amp;buf);</span><br><span class="line">	date_I.year = stoi(temp);</span><br><span class="line">	temp = strtok_s(<span class="literal">NULL</span>, <span class="string">"-"</span>, &amp;buf);</span><br><span class="line">	date_I.month = stoi(temp);</span><br><span class="line">	date_I.day = stoi(buf);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>需注意的是strDelimit为字符串的话并不是以整个字符串作为分隔符，而是其中每个字符单独作为分隔符。</p>
-<p>针对在线笔试的话直接用函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scanf(&quot;%d-%d-%d&quot;,&amp;year,&amp;month,&amp;day);</span><br></pre></td></tr></table></figure>
-<p>就完事了，不用麻烦的去操作字符串，太浪费时间。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1845,7 +1847,7 @@ bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}_t)\overline{bel}(\pmb{x}_t)</script>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1856,7 +1858,7 @@ bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}_t)\overline{bel}(\pmb{x}_t)</script>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1867,7 +1869,7 @@ bel(\pmb{x}_t)=\eta p(\pmb{z}_t|\pmb{x}_t)\overline{bel}(\pmb{x}_t)</script>
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
