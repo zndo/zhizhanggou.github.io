@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="字符串,">
+  <meta name="keywords" content="邮件,">
 
 
 
@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="C++提取字符串中的数字(strtok_s的使用)​        之前遇到需要将表示时间的字符串，例如“1995-10-08”，将其中的年月日提取出来用int型存储。C++(11)下没有直接转换标准时间格式的函数。直接用if语句提取来进行判断并截取十分的麻烦费时。 ​        可以用strtok_s(linux下为strtok_r)函数进行处理,其形式为: 1char *strtok_s(">
-<meta name="keywords" content="字符串">
+<meta name="description" content="参考：《图解TCP/IP》人民邮电出版社 p260~267 电子邮件的数据格式 MIME(Multipurpose Internet Mail Extensions)​        早期的电子邮件只能处理文本格式的邮件，后来扩展到MIME后可以发送静态图像、动画、音频、程序等各种形式的数据。鉴于MIME规定了应用消息的格式，因此在OSI参考模型中其相当于第6层的表示层。 电子邮件的通讯协议1、S">
+<meta name="keywords" content="邮件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++提取字符串中的数字(strtok_s的使用)">
-<meta property="og:url" content="https://zhizhanggou.github.io/2019/07/02/C-提取字符串中的数字-strtok-s的使用/index.html">
+<meta property="og:title" content="电子邮件的相关协议与数据格式">
+<meta property="og:url" content="https://zhizhanggou.github.io/2019/08/19/电子邮件的相关协议与数据格式/index.html">
 <meta property="og:site_name" content="dog house">
-<meta property="og:description" content="C++提取字符串中的数字(strtok_s的使用)​        之前遇到需要将表示时间的字符串，例如“1995-10-08”，将其中的年月日提取出来用int型存储。C++(11)下没有直接转换标准时间格式的函数。直接用if语句提取来进行判断并截取十分的麻烦费时。 ​        可以用strtok_s(linux下为strtok_r)函数进行处理,其形式为: 1char *strtok_s(">
+<meta property="og:description" content="参考：《图解TCP/IP》人民邮电出版社 p260~267 电子邮件的数据格式 MIME(Multipurpose Internet Mail Extensions)​        早期的电子邮件只能处理文本格式的邮件，后来扩展到MIME后可以发送静态图像、动画、音频、程序等各种形式的数据。鉴于MIME规定了应用消息的格式，因此在OSI参考模型中其相当于第6层的表示层。 电子邮件的通讯协议1、S">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-02T13:57:26.273Z">
+<meta property="og:image" content="https://zhizhanggou.github.io/2019/08/19/电子邮件的相关协议与数据格式/SMTP流程.png">
+<meta property="og:image" content="https://zhizhanggou.github.io/2019/08/19/电子邮件的相关协议与数据格式/POP协议.jpg">
+<meta property="og:updated_time" content="2019-08-19T07:59:15.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++提取字符串中的数字(strtok_s的使用)">
-<meta name="twitter:description" content="C++提取字符串中的数字(strtok_s的使用)​        之前遇到需要将表示时间的字符串，例如“1995-10-08”，将其中的年月日提取出来用int型存储。C++(11)下没有直接转换标准时间格式的函数。直接用if语句提取来进行判断并截取十分的麻烦费时。 ​        可以用strtok_s(linux下为strtok_r)函数进行处理,其形式为: 1char *strtok_s(">
+<meta name="twitter:title" content="电子邮件的相关协议与数据格式">
+<meta name="twitter:description" content="参考：《图解TCP/IP》人民邮电出版社 p260~267 电子邮件的数据格式 MIME(Multipurpose Internet Mail Extensions)​        早期的电子邮件只能处理文本格式的邮件，后来扩展到MIME后可以发送静态图像、动画、音频、程序等各种形式的数据。鉴于MIME规定了应用消息的格式，因此在OSI参考模型中其相当于第6层的表示层。 电子邮件的通讯协议1、S">
+<meta name="twitter:image" content="https://zhizhanggou.github.io/2019/08/19/电子邮件的相关协议与数据格式/SMTP流程.png">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://zhizhanggou.github.io/2019/07/02/C-提取字符串中的数字-strtok-s的使用/">
+  <link rel="canonical" href="https://zhizhanggou.github.io/2019/08/19/电子邮件的相关协议与数据格式/">
 
 
 
 
 
-  <title>C++提取字符串中的数字(strtok_s的使用) | dog house</title>
+  <title>电子邮件的相关协议与数据格式 | dog house</title>
   
 
 
@@ -253,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhizhanggou.github.io/2019/07/02/C-提取字符串中的数字-strtok-s的使用/">
+    <link itemprop="mainEntityOfPage" href="https://zhizhanggou.github.io/2019/08/19/电子邮件的相关协议与数据格式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zzg">
@@ -270,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++提取字符串中的数字(strtok_s的使用)</h1>
+          <h1 class="post-title" itemprop="name headline">电子邮件的相关协议与数据格式</h1>
         
 
         <div class="post-meta">
@@ -282,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-02T21:50:15+08:00">
-                2019-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T11:07:01+08:00">
+                2019-08-19
               </time>
             
 
@@ -305,8 +308,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-日常/" itemprop="url" rel="index">
-                    <span itemprop="name">C++日常</span>
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
                   </a>
                 </span>
 
@@ -347,16 +350,15 @@
       
 
       
-        <h1 id="C-提取字符串中的数字-strtok-s的使用"><a href="#C-提取字符串中的数字-strtok-s的使用" class="headerlink" title="C++提取字符串中的数字(strtok_s的使用)"></a>C++提取字符串中的数字(strtok_s的使用)</h1><p>​        之前遇到需要将表示时间的字符串，例如“1995-10-08”，将其中的年月日提取出来用int型存储。C++(11)下没有直接转换标准时间格式的函数。直接用if语句提取来进行判断并截取十分的麻烦费时。</p>
-<p>​        可以用<strong>strtok_s</strong>(linux下为<strong>strtok_r</strong>)函数进行处理,其形式为:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strtok_s</span><span class="params">( <span class="keyword">char</span> *strToken, <span class="keyword">const</span> <span class="keyword">char</span> *strDelimit, <span class="keyword">char</span> **buf)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>​        其返回值是被切割的第一个子字符串。strToken为被切割的字符串，strDelimit包含分隔字符的字符串，buf为切割后剩余字符串。<strong>字符串切割完后会将原字符串中的分隔字符替换为\0</strong>。</p>
-<p>使用方法如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> year;</span><br><span class="line">	<span class="keyword">int</span> month;</span><br><span class="line">	<span class="keyword">int</span> day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DateStrToInt</span><span class="params">(<span class="built_in">string</span> date_S, Date &amp;date_I)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> temp;</span><br><span class="line">	<span class="keyword">char</span>* buf;</span><br><span class="line">	temp = strtok_s((<span class="keyword">char</span>*)date_S.data(), <span class="string">"-"</span>, &amp;buf);</span><br><span class="line">	date_I.year = stoi(temp);</span><br><span class="line">	temp = strtok_s(<span class="literal">NULL</span>, <span class="string">"-"</span>, &amp;buf);</span><br><span class="line">	date_I.month = stoi(temp);</span><br><span class="line">	date_I.day = stoi(buf);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>需注意的是strDelimit为字符串的话并不是以整个字符串作为分隔符，而是其中每个字符单独作为分隔符。</p>
-<p>针对在线笔试的话直接用函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scanf(&quot;%d-%d-%d&quot;,&amp;year,&amp;month,&amp;day);</span><br></pre></td></tr></table></figure>
-<p>就完事了，不用麻烦的去操作字符串，太浪费时间。</p>
+        <p>参考：《图解TCP/IP》人民邮电出版社 p260~267</p>
+<h4 id="电子邮件的数据格式-MIME-Multipurpose-Internet-Mail-Extensions"><a href="#电子邮件的数据格式-MIME-Multipurpose-Internet-Mail-Extensions" class="headerlink" title="电子邮件的数据格式 MIME(Multipurpose Internet Mail Extensions)"></a>电子邮件的数据格式 MIME(Multipurpose Internet Mail Extensions)</h4><p>​        早期的电子邮件只能处理文本格式的邮件，后来扩展到MIME后可以发送静态图像、动画、音频、程序等各种形式的数据。鉴于MIME规定了应用消息的格式，因此在OSI参考模型中其相当于第6层的表示层。</p>
+<h4 id="电子邮件的通讯协议"><a href="#电子邮件的通讯协议" class="headerlink" title="电子邮件的通讯协议"></a>电子邮件的通讯协议</h4><h5 id="1、SMTP-Simple-Mail-Transfer-Protocol"><a href="#1、SMTP-Simple-Mail-Transfer-Protocol" class="headerlink" title="1、SMTP(Simple Mail Transfer Protocol)"></a>1、SMTP(Simple Mail Transfer Protocol)</h5><p>​        SMTP是发送电子邮件的协议。使用TCP的25号端口。发送端将邮件通过该协议发送到邮件服务器。</p>
+<p><img src="/2019/08/19/电子邮件的相关协议与数据格式/SMTP流程.png" alt="SMTP流程"></p>
+<p>​        早期电子邮件是发送端主机和接收端主机通过SMTP直接传输，这就需要两端的主机同时处于开机状态才能正常收发邮件。</p>
+<h5 id="2、POP-Post-Office-Protocol"><a href="#2、POP-Post-Office-Protocol" class="headerlink" title="2、POP(Post Office Protocol)"></a>2、POP(Post Office Protocol)</h5><p>​        POP协议是接收端从邮件服务器获取邮件的协议。发送端邮件通过SMTP协议发送到一直处于插电状态的POP服务器，客户端再根据POP协议从POP服务器接收邮件。这个过程中需要进行用户验证以防止他人盗窃邮件。</p>
+<p><img src="/2019/08/19/电子邮件的相关协议与数据格式/POP协议.jpg" alt="POP协议"></p>
+<p>​        POP中邮件由客户端进行管理。在POP中无法下载某个特定的附件。如要确认某个附件就必须将所有附件下载下来。其未读信息与邮件分类也都是在客户端中管理。POP协议在邮件由客户端接收完成后服务器端会删除邮件，在该协议最新版本POP3中可以做到只下载邮件，服务器端不删除。</p>
+<h5 id="3、IMAP-Internet-Message-Access-Protocol"><a href="#3、IMAP-Internet-Message-Access-Protocol" class="headerlink" title="3、IMAP(Internet Message Access Protocol)"></a>3、IMAP(Internet Message Access Protocol)</h5><p>​        IMAP与POP类似，也为接收电子邮件的协议。与POP不同的是IMAP中的邮件由服务器进行管理。可以不必从服务器上下载整个邮件也可以阅读，对于“已读/未读”及分类管理也都是在服务器端完成。</p>
 
       
     </div>
@@ -374,7 +376,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/字符串/" rel="tag"># 字符串</a>
+            <a href="/tags/邮件/" rel="tag"># 邮件</a>
           
         </div>
       
@@ -387,8 +389,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/30/栈的顺序存储结构/" rel="next" title="栈的顺序存储结构">
-                <i class="fa fa-chevron-left"></i> 栈的顺序存储结构
+              <a href="/2019/08/17/快乐辉光管/" rel="next" title="快乐辉光管">
+                <i class="fa fa-chevron-left"></i> 快乐辉光管
               </a>
             
           </div>
@@ -396,10 +398,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/03/KMP模式匹配算法/" rel="prev" title="KMP模式匹配算法">
-                KMP模式匹配算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-提取字符串中的数字-strtok-s的使用"><span class="nav-number">1.</span> <span class="nav-text">C++提取字符串中的数字(strtok_s的使用)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#电子邮件的数据格式-MIME-Multipurpose-Internet-Mail-Extensions"><span class="nav-number">1.</span> <span class="nav-text">电子邮件的数据格式 MIME(Multipurpose Internet Mail Extensions)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电子邮件的通讯协议"><span class="nav-number">2.</span> <span class="nav-text">电子邮件的通讯协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、SMTP-Simple-Mail-Transfer-Protocol"><span class="nav-number">2.1.</span> <span class="nav-text">1、SMTP(Simple Mail Transfer Protocol)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、POP-Post-Office-Protocol"><span class="nav-number">2.2.</span> <span class="nav-text">2、POP(Post Office Protocol)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、IMAP-Internet-Message-Access-Protocol"><span class="nav-number">2.3.</span> <span class="nav-text">3、IMAP(Internet Message Access Protocol)</span></a></li></ol></li></ol></div>
             
 
           </div>
