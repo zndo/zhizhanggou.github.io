@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="字符串,">
+  <meta name="keywords" content="以太网,">
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="​        使用istringstream对一句话中的各个单词进行操作。需包含头文件#include \ 1234567istringstream iss&amp;#123;s&amp;#125;;for (string word; iss &amp;gt;&amp;gt; word;) &amp;#123;	cout&amp;lt;&amp;lt;word&amp;lt;&amp;lt;endl;&amp;#125; 定义s=”each word is separat">
-<meta name="keywords" content="字符串">
+<meta name="description" content="参考：《图解TCP/IP》人民邮电出版社 p92~95 ​        以太网帧前端有一个叫做前导码的部分，表示一个以太网帧的开始，也是对端网卡能够确保与其同步的标志。前导码由7个字节组成，后面跟着一个字节的帧开始符。传输一个字节时由最低位开始传输(LSB)。         以太网帧本体的前端是以太网的部首，总共14个字节，分别为6字节的目标MAC地址、6字节的源MAC地址以及2字节的上层协议">
+<meta name="keywords" content="以太网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="只用字符串流对各个单词进行操作">
-<meta property="og:url" content="https://zhizhanggou.github.io/2019/08/02/只用字符串流对各个单词进行操作/index.html">
+<meta property="og:title" content="以太网的帧格式">
+<meta property="og:url" content="https://zhizhanggou.github.io/2019/08/20/以太网的帧格式/index.html">
 <meta property="og:site_name" content="dog house">
-<meta property="og:description" content="​        使用istringstream对一句话中的各个单词进行操作。需包含头文件#include \ 1234567istringstream iss&amp;#123;s&amp;#125;;for (string word; iss &amp;gt;&amp;gt; word;) &amp;#123;	cout&amp;lt;&amp;lt;word&amp;lt;&amp;lt;endl;&amp;#125; 定义s=”each word is separat">
+<meta property="og:description" content="参考：《图解TCP/IP》人民邮电出版社 p92~95 ​        以太网帧前端有一个叫做前导码的部分，表示一个以太网帧的开始，也是对端网卡能够确保与其同步的标志。前导码由7个字节组成，后面跟着一个字节的帧开始符。传输一个字节时由最低位开始传输(LSB)。         以太网帧本体的前端是以太网的部首，总共14个字节，分别为6字节的目标MAC地址、6字节的源MAC地址以及2字节的上层协议">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-02T08:54:50.750Z">
+<meta property="og:image" content="https://zhizhanggou.github.io/2019/08/20/以太网的帧格式/前导码.JPG">
+<meta property="og:image" content="https://zhizhanggou.github.io/2019/08/20/以太网的帧格式/帧体格式.jpg">
+<meta property="og:image" content="https://zhizhanggou.github.io/2019/08/20/以太网的帧格式/LLC与SNAP.jpg">
+<meta property="og:updated_time" content="2019-08-20T08:46:49.780Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="只用字符串流对各个单词进行操作">
-<meta name="twitter:description" content="​        使用istringstream对一句话中的各个单词进行操作。需包含头文件#include \ 1234567istringstream iss&amp;#123;s&amp;#125;;for (string word; iss &amp;gt;&amp;gt; word;) &amp;#123;	cout&amp;lt;&amp;lt;word&amp;lt;&amp;lt;endl;&amp;#125; 定义s=”each word is separat">
+<meta name="twitter:title" content="以太网的帧格式">
+<meta name="twitter:description" content="参考：《图解TCP/IP》人民邮电出版社 p92~95 ​        以太网帧前端有一个叫做前导码的部分，表示一个以太网帧的开始，也是对端网卡能够确保与其同步的标志。前导码由7个字节组成，后面跟着一个字节的帧开始符。传输一个字节时由最低位开始传输(LSB)。         以太网帧本体的前端是以太网的部首，总共14个字节，分别为6字节的目标MAC地址、6字节的源MAC地址以及2字节的上层协议">
+<meta name="twitter:image" content="https://zhizhanggou.github.io/2019/08/20/以太网的帧格式/前导码.JPG">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://zhizhanggou.github.io/2019/08/02/只用字符串流对各个单词进行操作/">
+  <link rel="canonical" href="https://zhizhanggou.github.io/2019/08/20/以太网的帧格式/">
 
 
 
 
 
-  <title>只用字符串流对各个单词进行操作 | dog house</title>
+  <title>以太网的帧格式 | dog house</title>
   
 
 
@@ -253,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhizhanggou.github.io/2019/08/02/只用字符串流对各个单词进行操作/">
+    <link itemprop="mainEntityOfPage" href="https://zhizhanggou.github.io/2019/08/20/以太网的帧格式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zzg">
@@ -270,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">只用字符串流对各个单词进行操作</h1>
+          <h1 class="post-title" itemprop="name headline">以太网的帧格式</h1>
         
 
         <div class="post-meta">
@@ -282,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T16:20:14+08:00">
-                2019-08-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T16:04:12+08:00">
+                2019-08-20
               </time>
             
 
@@ -305,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-日常/" itemprop="url" rel="index">
-                    <span itemprop="name">C++日常</span>
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
                   </a>
                 </span>
 
@@ -347,16 +351,13 @@
       
 
       
-        <p>​        使用istringstream对一句话中的各个单词进行操作。需包含头文件#include \<sstream></sstream></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">istringstream iss&#123;s&#125;;</span><br><span class="line"></span><br><span class="line">for (string word; iss &gt;&gt; word;) &#123;</span><br><span class="line"></span><br><span class="line">	cout&lt;&lt;word&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义s=”each word is separated by single space”.则输出为</p>
-<p>each</p>
-<p>word</p>
-<p>is</p>
-<p>separated</p>
-<p>by</p>
-<p>single</p>
-<p>space</p>
+        <p>参考：《图解TCP/IP》人民邮电出版社 p92~95</p>
+<p>​        以太网帧前端有一个叫做前导码的部分，表示一个以太网帧的开始，也是对端网卡能够确保与其同步的标志。前导码由7个字节组成，后面跟着一个字节的帧开始符。传输一个字节时由最低位开始传输(LSB)。</p>
+<p><img src="/2019/08/20/以太网的帧格式/前导码.JPG" alt="前导码">        以太网帧本体的前端是以太网的部首，总共14个字节，分别为6字节的目标MAC地址、6字节的源MAC地址以及2字节的上层协议类型。</p>
+<p><img src="/2019/08/20/以太网的帧格式/帧体格式.jpg" alt="帧体格式"></p>
+<p>​        帧头后是数据，数据帧最大能容纳的数据范围是46~1500个字节。帧尾接FCS(Frame Check Sequence,帧检查序列)的四字节。FCS保存着整个帧除以生成多项式的余数。</p>
+<p>​        在IEEE802.3的帧格式中附加的LLC与SNAP就是由逻辑链路控制的部首信息。</p>
+<p><img src="/2019/08/20/以太网的帧格式/LLC与SNAP.jpg" alt="LLC与SNAP"></p>
 
       
     </div>
@@ -374,7 +375,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/字符串/" rel="tag"># 字符串</a>
+            <a href="/tags/以太网/" rel="tag"># 以太网</a>
           
         </div>
       
@@ -387,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/30/unordered-set/" rel="next" title="unordered_set">
-                <i class="fa fa-chevron-left"></i> unordered_set
+              <a href="/2019/08/19/电子邮件的相关协议与数据格式/" rel="next" title="电子邮件的相关协议与数据格式">
+                <i class="fa fa-chevron-left"></i> 电子邮件的相关协议与数据格式
               </a>
             
           </div>
@@ -396,10 +397,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/03/string-npos的使用/" rel="prev" title="string::npos的使用">
-                string::npos的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
